@@ -22,9 +22,9 @@ blacklist = "(?!assets|articles|site|images|open_graph|features|business|_privat
 regEx = "/+" + blacklist + "[[\w]+/[\w\-\_\.]*]*"
 
 
-# skim through first five search result pages
+# skim through first three search result pages
 # and filter out repository URL into a list
-for i in range(1,5):
+for i in range(1,4):
     # URL for advanced search:
     # p=i: open page number i
     # q=created: created on current day

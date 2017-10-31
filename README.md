@@ -1,5 +1,5 @@
 # YoGit!
-This is a simple Python script that opens a random URL of a GitHub repository that has been recently modified. This will be done by skimming through the first five GitHub advanced search result pages and filtering out repository URLs. One of these URLs will then be randomly chosen to be opened in your web browser.
+This is a simple Python script that opens a random URL of a GitHub repository that has been recently modified. This will be done by skimming through the first three GitHub advanced search result pages and filtering out repository URLs. One of these URLs will then be randomly chosen to be opened in your web browser.
 
 # How to open YoGit!
 Simply run YoGit! by downloading the .py file and run it (command line: "python yogit.py"). A random repository page will be opened soon afterwards.
