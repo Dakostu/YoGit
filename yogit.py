@@ -39,6 +39,11 @@ for i in range(1,4):
     pagesStringified = fileDesc.read().decode()
     urlLists += re.findall(regEx,pagesStringified)
     
+if len(urlLists) == 0:
+           print ("No Repositories found.")
+           raise SystemExit
+    
+
 # get random element from list and open in browser
 random.seed()
 randomRepoLink = urlLists.pop(random.randrange(len(urlLists)))
