@@ -40,6 +40,7 @@ for i in range(1,4):
     urlLists += re.findall(regEx,pagesStringified)
     
 # get random element from list and open in browser
+random.seed()
 randomRepoLink = urlLists.pop(random.randrange(len(urlLists)))
 webbrowser.open(gitHubURL + randomRepoLink, new=2, autoraise=True)
 
