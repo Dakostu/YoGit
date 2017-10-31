@@ -21,7 +21,6 @@ blacklist = "(?!assets|articles|site|images|open_graph|features|business|_privat
 # regular expression for "/username/name-of-repository"
 regEx = "/+" + blacklist + "[[\w]+/[\w\-\_\.]*]*"
 
-
 # skim through first three search result pages
 # and filter out repository URL into a list
 for i in range(1,4):
@@ -30,7 +29,13 @@ for i in range(1,4):
     # q=created: created on current day
     # s=updated: sort by most recent update
     searchUrl = gitHubURL + "/search?p=" + str(i) + "&q=created%3A" + currentYear + "-" + currentMonth + "-" + currentDay + "&s=updated&type=Repositories"
-    fileDesc = urlopen(searchUrl)
+    
+    try:
+        fileDesc = urlopen(searchUrl)
+    except urllib.error.HTTPError as e:
+        print ("HTTP Error: " + str(e.code))
+        raise SystemExit
+    
     pagesStringified = fileDesc.read().decode()
     urlLists += re.findall(regEx,pagesStringified)
     
