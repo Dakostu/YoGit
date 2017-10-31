@@ -8,4 +8,4 @@ Please be aware that GitHub has a limit for HTTP requests. If you get a "Too Man
 
 
 
-Have fun exploring GitHub and maybe finding new inspiration.
+Have fun exploring GitHub and maybe finding a new inspiring repository.
