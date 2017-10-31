@@ -17,7 +17,7 @@ currentYear = time.strftime("%Y")
 gitHubURL = "https://github.com"
 urlLists = []
 # RegEx blacklist 
-blacklist = "(?!assets|articles|site|images|open_graph|features|business|_private|docs|integrations|modules|pricing|feature|browser|search|trending|topics)"
+blacklist = "(?!assets|articles|site|images|open_graph|features|business|_private|docs|integrations|modules|pricing|feature|browser|search|trending|topics|unicode)"
 # regular expression for "/username/name-of-repository"
 regEx = "/+" + blacklist + "[[\w]+/[\w\-\_\.]*]*"
 
