@@ -10,7 +10,7 @@ import re
 from six.moves.urllib.request import urlopen
 from datetime import date, timedelta
 
-# Get today timestamp for advanced search
+# Get today's and yesteday's timestamp for advanced search
 today = date.today()
 yesterday= date.today() - timedelta(1)
 todayDay = today.strftime("%d")
