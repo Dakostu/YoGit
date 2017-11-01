@@ -12,7 +12,7 @@ from datetime import date, timedelta
 
 # Get today's and yesteday's timestamp for advanced search
 today = date.today()
-yesterday= date.today() - timedelta(1)
+yesterday = today - timedelta(days = 1)
 todayDay = today.strftime("%d")
 todayMonth = today.strftime("%m")
 todayYear = today.strftime("%Y")
@@ -34,7 +34,7 @@ for i in range(1,4):
     # q=created: created on a certain day
     # s=updated: sort by most recent update
     searchUrl = gitHubURL + "/search?p=" + str(i) + "&q=created%3A" + todayYear + "-" + todayMonth + "-" + todayDay + "&q=created%3A" + yesterdayYear + "-" + yesterdayMonth + "-" + yesterdayDay + "&s=updated&type=Repositories"
-    
+        
     try:
         fileDesc = urlopen(searchUrl)
     except urllib.error.HTTPError as e:
