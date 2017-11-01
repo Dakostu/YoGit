@@ -39,6 +39,8 @@ for i in range(1,4):
         fileDesc = urlopen(searchUrl)
     except urllib.error.HTTPError as e:
         print ("HTTP Error: " + str(e.code))
+        if e.code == 429:
+            print ("Too many HTTP requests. Please wait around 10 minutes, then try it again.")
         raise SystemExit
     except urllib.error.URLError as e:
         print ("Error while accessing Github pages:")
