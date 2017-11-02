@@ -5,3 +5,10 @@ This is a small Python script that opens a random URL of a public GitHub reposit
 Simply launch YoGit! by downloading the .py file and running it (command line: "python yogit.py"). A random repository page will be opened soon afterwards.
 
 Have fun exploring GitHub and maybe finding a new inspiring repository.
+
+# Python Modules used
+
+- requests
+- random
+- webbrowser
+- datetime (date, timedelta)
