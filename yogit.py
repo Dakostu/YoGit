@@ -14,20 +14,17 @@ def putInISO(aDate):
     
 # This is where the magic happens
 def main():    
-    gitHubURL = "https://github.com/"
-    # Get today's and yesteday's timestamp for advanced search
-    today = date.today()
-    todayISO = putInISO(today)
-    yesterday = today - timedelta(days = 1)
-    yesterdayISO = putInISO(yesterday)
+    # Get timestamp of the day before yesterday as a buffer for API request
+    pufferDay = date.today() - timedelta(days = 2)
+    pufferDayISO = putInISO(pufferDay)
 
     # open list of 100 most recent repositories on GitHub API
-    urlList = requests.get('https://api.github.com/search/repositories', params = {"sort": "updated", "order" : "desc", "q" : "created:>" + todayISO, "q" : "created:>" + yesterdayISO, "per_page" : "100"})
+    urlList = requests.get('https://api.github.com/search/repositories', params = {"sort": "updated", "order" : "desc", "q" : "created:>" + pufferDayISO, "per_page" : "100"})
     
     # get random element from list and open in browser    
     random.seed()
-    randomRepoLink = urlList.json()["items"][random.randrange(100)]["full_name"]
-    webbrowser.open(gitHubURL + randomRepoLink, new=2, autoraise=True)
+    randomRepoLink = urlList.json()["items"][random.randrange(100)]["html_url"]
+    webbrowser.open(randomRepoLink, new=2, autoraise=True)
 
 
 main()
