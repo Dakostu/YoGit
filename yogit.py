@@ -17,8 +17,8 @@ def main():
     gitHubURL = "https://github.com/"
     # Get today's and yesteday's timestamp for advanced search
     today = date.today()
-    yesterday = today - timedelta(days = 1)
     todayISO = putInISO(today)
+    yesterday = today - timedelta(days = 1)
     yesterdayISO = putInISO(yesterday)
 
     # open list of 100 most recent repositories on GitHub API
