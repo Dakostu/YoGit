@@ -6,7 +6,7 @@ Simply launch YoGit! by downloading the .py file and running it (command line: "
 
 Have fun exploring GitHub and maybe finding a new inspiring repository.
 
-# Python Modules used
+### Python Modules used
 
 - requests
 - random
