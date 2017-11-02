@@ -8,7 +8,7 @@ import random
 import webbrowser 
 from datetime import date, timedelta
 
-# put a date into an ISO date string
+# transform date into ISO date string format
 def putInISO(aDate):
     return aDate.strftime("%Y") + "-" + aDate.strftime("%m") + "-" + aDate.strftime("%d")
     
