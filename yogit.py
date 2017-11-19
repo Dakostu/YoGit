@@ -8,7 +8,7 @@ import random
 import webbrowser 
 from datetime import date, timedelta
 
-# transform date into ISO date string format
+# function: transform date into ISO date string format
 def putInISO(aDate):
     return aDate.strftime("%Y") + "-" + aDate.strftime("%m") + "-" + aDate.strftime("%d")
     
@@ -19,7 +19,12 @@ def main():
     pufferDayISO = putInISO(pufferDay)
 
     # open list of 100 most recent repositories on GitHub API
-    urlList = requests.get('https://api.github.com/search/repositories', params = {"sort": "updated", "order" : "desc", "q" : "created:>" + pufferDayISO, "per_page" : "100"})
+    try:
+        urlList = requests.get('https://api.github.com/search/repositories', params = {"sort": "updated", "order" : "desc", "q" : "created:>" + pufferDayISO, "per_page" : "100"})
+    except requests.exceptions.RequestException as e:
+        print ("GitHub API could not be accessed at this time:")
+        print (e)
+        raise SystemExit
     
     # get random element from list and open in browser    
     random.seed()
