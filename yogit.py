@@ -32,4 +32,6 @@ def main():
     webbrowser.open(randomRepoLink, new=2, autoraise=True)
 
 
-main()
+
+if __name__ == "__main__":
+    main()
